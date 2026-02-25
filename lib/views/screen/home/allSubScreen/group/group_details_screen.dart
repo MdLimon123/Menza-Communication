@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/group/add_members_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/group/administrators/administrators_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/group/administrators/group_permission_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/group/groupSetting/group_settings_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:screenshot/screenshot.dart';
 
 class GroupDetailsScreen extends StatefulWidget {
   const GroupDetailsScreen({super.key});
@@ -319,53 +322,68 @@ class _GroupDetailsScreenState extends State<GroupDetailsScreen> {
             ),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    SvgPicture.asset('assets/icon/add_people.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      "Add Members",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.textColor,
+                InkWell(
+                  onTap: () {
+                    Get.to(() => const AddMembersScreen());
+                  },
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icon/add_people.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        "Add Members",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.textColor,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 4),
                 const Divider(color: Colors.black),
                 const SizedBox(height: 4),
-                Row(
-                  children: [
-                    SvgPicture.asset('assets/icon/administrators.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      "Administrators",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.textColor,
+                InkWell(
+                  onTap: () {
+                    Get.to(() => const AdministratorsScreen());
+                  },
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icon/administrators.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        "Administrators",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.textColor,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 4),
                 const Divider(color: Colors.black),
                 const SizedBox(height: 4),
-                Row(
-                  children: [
-                    SvgPicture.asset('assets/icon/group_settings.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      "Group Settings",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.textColor,
+                InkWell(
+                  onTap: () {
+                    Get.to(() => const GroupSettingsScreen());
+                  },
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icon/group_settings.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        "Group Settings",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.textColor,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

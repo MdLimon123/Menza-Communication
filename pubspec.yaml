@@ -1,0 +1,58 @@
+name: flutter_extension
+description: "Flutter extension"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons:
+  get:
+  shared_preferences:
+  flutter_screenutil:
+  flutter_svg:
+  flutter_spinkit:
+  cached_network_image:
+  shimmer: 
+  smooth_page_indicator: ^2.0.1
+  image_picker: ^1.2.1
+  screenshot: ^3.0.0
+  matrix_gesture_detector: ^0.2.0-nullsafety.1
+  google_fonts: ^6.2.1
+  flutter_colorpicker: ^1.1.0
+  path_provider:
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/language/
+    - assets/images/
+    - assets/font/
+    - assets/icon/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/font/Inter_18pt-Regular.ttf
+          weight: 400
+        - asset: assets/font/Inter_18pt-Medium.ttf
+          weight: 500
+        - asset: assets/font/Inter_18pt-SemiBold.ttf
+          weight: 600
+        - asset: assets/font/Inter_18pt-Bold.ttf
+          weight: 700
+        - asset: assets/font/Inter_18pt-ExtraBold.ttf
+          weight: 800
+        - asset: assets/font/Inter_18pt-ExtraLight.ttf
+          weight: 200
+  

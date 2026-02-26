@@ -5,6 +5,7 @@ import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/filter_button.dart';
 import 'package:flutter_extension/views/base/story_thumb.dart';
 import 'package:flutter_extension/views/screen/home/allSubScreen/channel/channel_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/create/create_screen.dart';
 import 'package:flutter_extension/views/screen/home/allSubScreen/group/group_chat_screen.dart';
 import 'package:flutter_extension/views/screen/home/allSubScreen/personal/personal_chat_screen.dart';
 import 'package:flutter_svg/svg.dart';
@@ -27,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         children: [
           const CustomGridentDesign(),
-
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -84,35 +84,40 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       const SizedBox(width: 8),
 
-                      Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
+                      InkWell(
+                        onTap: () {
+                          Get.to(() => const CreateScreen());
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
 
-                          color: const Color(0xFF3E1A1A),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              const Color(0xFFFFFFFF).withValues(alpha: 0.15),
-                              const Color(0xFFFFFFFF).withValues(alpha: 0.0),
-                            ],
+                            color: const Color(0xFF3E1A1A),
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                const Color(0xFFFFFFFF).withValues(alpha: 0.15),
+                                const Color(0xFFFFFFFF).withValues(alpha: 0.0),
+                              ],
+                            ),
+
+                            border: Border.all(
+                              color: const Color(
+                                0xFFFFFFFF,
+                              ).withValues(alpha: 0.2),
+                              width: 0.5,
+                            ),
                           ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SvgPicture.asset(
+                              'assets/icon/add_icon.svg',
 
-                          border: Border.all(
-                            color: const Color(
-                              0xFFFFFFFF,
-                            ).withValues(alpha: 0.2),
-                            width: 0.5,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SvgPicture.asset(
-                            'assets/icon/add_icon.svg',
-
-                            color: Colors.white,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),

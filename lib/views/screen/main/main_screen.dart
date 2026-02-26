@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_extension/views/base/bottom_menu.dart';
+import 'package:flutter_extension/views/screen/discovery/discovery_screen.dart';
 import 'package:flutter_extension/views/screen/home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    Container(color: Colors.red),
+    const DiscoveryScreen(),
     Container(color: Colors.green),
     Container(color: Colors.yellow),
   ];

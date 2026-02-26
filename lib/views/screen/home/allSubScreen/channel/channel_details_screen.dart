@@ -1,21 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
-import 'package:flutter_extension/views/screen/home/allSubScreen/group/add_members_screen.dart';
-import 'package:flutter_extension/views/screen/home/allSubScreen/group/administrators/administrators_screen.dart';
-import 'package:flutter_extension/views/screen/home/allSubScreen/group/groupSetting/group_settings_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/add_channel_member_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/channelSetting/channel_settings_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/channel_administrators_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class GroupDetailsScreen extends StatefulWidget {
-  const GroupDetailsScreen({super.key});
+class ChannelDetailsScreen extends StatefulWidget {
+  const ChannelDetailsScreen({super.key});
 
   @override
-  State<GroupDetailsScreen> createState() => _GroupDetailsScreenState();
+  State<ChannelDetailsScreen> createState() => _ChannelDetailsScreenState();
 }
 
-class _GroupDetailsScreenState extends State<GroupDetailsScreen> {
- 
+class _ChannelDetailsScreenState extends State<ChannelDetailsScreen> {
+  final String description =
+      "Biggest Designer Community on Telegram Designer's Space (Hire or Get Hired) #design #telegramdesign #uiux #graphicdesigner #uiuxdesign #uiuxsupply #design #internship";
+
+  List<TextSpan> buildDescriptionWithHashtags(String text) {
+    final List<TextSpan> spans = [];
+    final words = text.split(' ');
+
+    for (final word in words) {
+      if (word.startsWith('#')) {
+        spans.add(
+          TextSpan(
+            text: '$word ',
+            style: const TextStyle(
+              color: Color(0xFF4A74FF),
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        );
+      } else {
+        spans.add(
+          TextSpan(
+            text: '$word ',
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        );
+      }
+    }
+    return spans;
+  }
+
   int selectedTabIndex = 0;
 
   final List<Map<String, String>> links = [
@@ -300,12 +334,9 @@ class _GroupDetailsScreenState extends State<GroupDetailsScreen> {
                   ),
                 ),
                 const SizedBox(height: 4),
-                Text(
-                  "Biggest Designer Community on Telegram Designer's Space (Hire or Get Hired) #design #telegramdesign #uiux #graphicdesigner #uiuxdesign #uiuxsupply #design #internship",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.textColor,
+                RichText(
+                  text: TextSpan(
+                    children: buildDescriptionWithHashtags(description),
                   ),
                 ),
               ],
@@ -324,7 +355,7 @@ class _GroupDetailsScreenState extends State<GroupDetailsScreen> {
               children: [
                 InkWell(
                   onTap: () {
-                    Get.to(() => const AddMembersScreen());
+                    Get.to(() => const AddChannelMemberScreen());
                   },
                   child: Row(
                     children: [
@@ -346,7 +377,7 @@ class _GroupDetailsScreenState extends State<GroupDetailsScreen> {
                 const SizedBox(height: 4),
                 InkWell(
                   onTap: () {
-                    Get.to(() => const AdministratorsScreen());
+                    Get.to(() => const ChannelAdministratorsScreen());
                   },
                   child: Row(
                     children: [
@@ -368,7 +399,7 @@ class _GroupDetailsScreenState extends State<GroupDetailsScreen> {
                 const SizedBox(height: 4),
                 InkWell(
                   onTap: () {
-                    Get.to(() => const GroupSettingsScreen());
+                    Get.to(() => const ChannelSettingsScreen());
                   },
                   child: Row(
                     children: [
@@ -622,6 +653,4 @@ class _GroupDetailsScreenState extends State<GroupDetailsScreen> {
       },
     );
   }
-
-
 }

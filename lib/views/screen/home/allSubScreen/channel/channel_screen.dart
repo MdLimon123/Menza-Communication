@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/custom_network_image.dart';
-import 'package:flutter_extension/views/screen/home/allSubScreen/group/group_details_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/channel_details_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class GroupChatScreen extends StatefulWidget {
-  const GroupChatScreen({super.key});
+class ChannelScreen extends StatefulWidget {
+  const ChannelScreen({super.key});
 
   @override
-  State<GroupChatScreen> createState() => _GroupChatScreenState();
+  State<ChannelScreen> createState() => _ChannelScreenState();
 }
 
-class _GroupChatScreenState extends State<GroupChatScreen> {
+class _ChannelScreenState extends State<ChannelScreen> {
   final TextEditingController _controller = TextEditingController();
 
   final List<Map<String, dynamic>> messages = [
@@ -59,8 +59,6 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
     },
   ];
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +84,7 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                       const SizedBox(width: 24),
                       InkWell(
                         onTap: () {
-                          Get.to(() => const GroupDetailsScreen());
+                          Get.to(()=> const ChannelDetailsScreen());
                         },
                         child: Container(
                           height: 32,
@@ -103,7 +101,7 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                       const SizedBox(width: 8),
                       InkWell(
                         onTap: () {
-                          Get.to(() => const GroupDetailsScreen());
+                            Get.to(()=> const ChannelDetailsScreen());
                         },
                         child: Text(
                           "Qmona Minus",
@@ -116,33 +114,6 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                       ),
                       const Spacer(),
 
-                      // Container(
-                      //   height: 40,
-                      //   width: 40,
-                      //   decoration: BoxDecoration(
-                      //     shape: BoxShape.circle,
-                      //     color: const Color(0xFF3E1A1A),
-                      //     gradient: LinearGradient(
-                      //       begin: Alignment.topCenter,
-                      //       end: Alignment.bottomCenter,
-                      //       colors: [
-                      //         const Color(0xFFFFFFFF).withOpacity(0.15),
-                      //         const Color(0xFFFFFFFF).withOpacity(0.0),
-                      //       ],
-                      //     ),
-                      //     border: Border.all(
-                      //       color: const Color(0xFFFFFFFF).withOpacity(0.2),
-                      //       width: 0.5,
-                      //     ),
-                      //   ),
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(8.0),
-                      //     child: SvgPicture.asset(
-                      //       'assets/icon/phone_fill.svg',
-                      //       color: Colors.white,
-                      //     ),
-                      //   ),
-                      // ),
                       const SizedBox(width: 8),
 
                       PopupMenuButton<String>(
@@ -316,17 +287,17 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                     children: [
                       Center(
                         child: Text(
-                          'Confirm Leave Group',
+                          'Leave Channel Confirmation',
                           style: TextStyle(
                             color: AppColors.textColor,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
                       const SizedBox(height: 7),
                       const Text(
-                        'Are you sure you want to leave this group? You will no longer receive group messages or updates.',
+                        'Are you sure you want to leave this channel? You will no longer receive channel messages or updates.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white70,
@@ -353,7 +324,7 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                                     'Cancel',
                                     style: TextStyle(
                                       color: AppColors.textColor,
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
@@ -361,7 +332,7 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                               ),
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          const SizedBox(width: 10),
                           Expanded(
                             child: InkWell(
                               onTap: () {
@@ -380,10 +351,10 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                                 ),
                                 child: Center(
                                   child: Text(
-                                    'Leave Group',
+                                    'Leave Channel',
                                     style: TextStyle(
                                       color: AppColors.textColor,
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
@@ -403,8 +374,6 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
       },
     );
   }
-
-
 
   Widget _buildMessage(Map<String, dynamic> message) {
     if (message['type'] == 'date') {
@@ -429,33 +398,22 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
         ),
       );
     }
-
-    bool isSent = message['type'] == 'sent';
-    bool isVoice = message['type'] == 'voice';
-
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.only(bottom: 4),
       child: Row(
-        mainAxisAlignment: isSent
-            ? MainAxisAlignment.end
-            : MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (!isSent) ...[
-            CustomNetworkImage(
-              imageUrl: message['avatar'],
-              boxShape: BoxShape.circle,
-              height: 32,
-              width: 32,
-            ),
-
-            const SizedBox(width: 8),
-          ],
+          CustomNetworkImage(
+            imageUrl: message['avatar'],
+            boxShape: BoxShape.circle,
+            height: 32,
+            width: 32,
+          ),
+          const SizedBox(width: 8),
           Flexible(
             child: Column(
-              crossAxisAlignment: isSent
-                  ? CrossAxisAlignment.end
-                  : CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Container(
                   constraints: BoxConstraints(
@@ -463,15 +421,13 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                   ),
                   padding: EdgeInsets.symmetric(
                     horizontal: 16,
-                    vertical: isVoice ? 12 : 10,
+                    vertical: message['type'] == 'voice' ? 12 : 10,
                   ),
                   decoration: BoxDecoration(
-                    color: isSent
-                        ? const Color(0xFF811C0A)
-                        : const Color(0xFF1A1A1A),
+                    color: const Color(0xFF141414),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: isVoice
+                  child: message['type'] == 'voice'
                       ? _buildVoiceMessage()
                       : Text(
                           message['text'],
@@ -483,11 +439,9 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                         ),
                 ),
                 const SizedBox(height: 4),
+
                 Padding(
-                  padding: EdgeInsets.only(
-                    left: isSent ? 0 : 8,
-                    right: isSent ? 8 : 0,
-                  ),
+                  padding: const EdgeInsets.only(right: 8),
                   child: Text(
                     message['time'],
                     style: TextStyle(
@@ -500,15 +454,6 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
               ],
             ),
           ),
-          if (isSent) ...[
-            const SizedBox(width: 8),
-            CustomNetworkImage(
-              imageUrl: message['avatar'],
-              boxShape: BoxShape.circle,
-              height: 32,
-              width: 32,
-            ),
-          ],
         ],
       ),
     );
@@ -613,8 +558,6 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
       ),
     );
   }
-
-
 }
 
 class WaveformPainter extends CustomPainter {

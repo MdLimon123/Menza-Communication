@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
-import 'package:flutter_extension/views/screen/home/allSubScreen/group/administrators/add_group_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/add_admin_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class AdministratorsScreen extends StatefulWidget {
-  const AdministratorsScreen({super.key});
+class ChannelAdministratorsScreen extends StatefulWidget {
+  const ChannelAdministratorsScreen({super.key});
 
   @override
-  State<AdministratorsScreen> createState() => _AdministratorsScreenState();
+  State<ChannelAdministratorsScreen> createState() =>
+      _ChannelAdministratorsScreenState();
 }
 
-class _AdministratorsScreenState extends State<AdministratorsScreen> {
-
+class _ChannelAdministratorsScreenState
+    extends State<ChannelAdministratorsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +25,6 @@ class _AdministratorsScreenState extends State<AdministratorsScreen> {
           SafeArea(
             child: Column(
               children: [
-              
-              
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
@@ -43,7 +42,7 @@ class _AdministratorsScreenState extends State<AdministratorsScreen> {
 
                       const SizedBox(width: 8),
                       Text(
-                        "Group",
+                        "Administrators",
                         style: TextStyle(
                           color: AppColors.textColor,
                           fontSize: 18,
@@ -103,7 +102,7 @@ class _AdministratorsScreenState extends State<AdministratorsScreen> {
                                 const Spacer(),
                                 InkWell(
                                   onTap: () {
-                                    Get.to(() => const AddGroupScreen());
+                                    Get.to(() => const AddAdminScreen());
                                   },
                                   child: SvgPicture.asset(
                                     'assets/icon/add_icon.svg',
@@ -204,7 +203,4 @@ class _AdministratorsScreenState extends State<AdministratorsScreen> {
       ),
     );
   }
-
-
-
 }

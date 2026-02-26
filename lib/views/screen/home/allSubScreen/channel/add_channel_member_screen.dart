@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/custom_text_field.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class AddMembersScreen extends StatefulWidget {
-  const AddMembersScreen({super.key});
+class AddChannelMemberScreen extends StatefulWidget {
+  const AddChannelMemberScreen({super.key});
 
   @override
-  State<AddMembersScreen> createState() => _AddMembersScreenState();
+  State<AddChannelMemberScreen> createState() => _AddChannelMemberScreenState();
 }
 
-class _AddMembersScreenState extends State<AddMembersScreen> {
-
-  
+class _AddChannelMemberScreenState extends State<AddChannelMemberScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +22,6 @@ class _AddMembersScreenState extends State<AddMembersScreen> {
           SafeArea(
             child: Column(
               children: [
-
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
@@ -62,9 +59,9 @@ class _AddMembersScreenState extends State<AddMembersScreen> {
                     ],
                   ),
                 ),
-               
+
                 const SizedBox(height: 20),
-                
+
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: CustomTextField(
@@ -81,7 +78,7 @@ class _AddMembersScreenState extends State<AddMembersScreen> {
                     ),
                   ),
                 ),
-                
+
                 const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -200,6 +197,4 @@ class _AddMembersScreenState extends State<AddMembersScreen> {
       ),
     );
   }
-
-
 }

@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_button.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class UplaodImageScreen extends StatefulWidget {
-  const UplaodImageScreen({super.key});
+class ChannelImageUplaod extends StatefulWidget {
+  const ChannelImageUplaod({super.key});
 
   @override
-  State<UplaodImageScreen> createState() => _UplaodImageScreenState();
+  State<ChannelImageUplaod> createState() => _ChannelImageUplaodState();
 }
 
-class _UplaodImageScreenState extends State<UplaodImageScreen> {
-
+class _ChannelImageUplaodState extends State<ChannelImageUplaod> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,6 +103,4 @@ class _UplaodImageScreenState extends State<UplaodImageScreen> {
       ),
     );
   }
-
-
 }

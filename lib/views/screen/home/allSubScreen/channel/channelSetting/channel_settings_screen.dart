@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
-import 'package:flutter_extension/views/screen/home/allSubScreen/group/groupSetting/uplaod_image_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/channelSetting/channel_image_uplaod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class GroupSettingsScreen extends StatefulWidget {
-  const GroupSettingsScreen({super.key});
+class ChannelSettingsScreen extends StatefulWidget {
+  const ChannelSettingsScreen({super.key});
 
   @override
-  State<GroupSettingsScreen> createState() => _GroupSettingsScreenState();
+  State<ChannelSettingsScreen> createState() => _ChannelSettingsScreenState();
 }
 
-class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
-
-
-  String selectedGroupType = 'Public Group';
+class _ChannelSettingsScreenState extends State<ChannelSettingsScreen> {
+  String selectedGroupType = 'Public Channel';
 
   final String description =
       "Biggest Designer Community on Telegram Designer's Space (Hire or Get Hired) #design #telegramdesign #uiux #graphicdesigner #uiuxdesign #uiuxsupply #design #internship";
@@ -52,8 +50,6 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
     return spans;
   }
 
-
-
   void showGroupTypeDialog() {
     showDialog(
       context: context,
@@ -74,7 +70,7 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Group Type",
+                          "Channel Type",
                           style: TextStyle(
                             color: AppColors.textColor,
                             fontSize: 18,
@@ -93,10 +89,10 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
                     // Public Group
                     _buildGroupTypeOption(
                       setDialogState: setDialogState,
-                      title: "Public Group",
+                      title: "Public Channel",
                       subtitle:
                           "Public channel can be found in search, anyone can join them",
-                      value: "Public Group",
+                      value: "Public Channel",
                     ),
 
                     const SizedBox(height: 12),
@@ -104,10 +100,10 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
                     // Private Group
                     _buildGroupTypeOption(
                       setDialogState: setDialogState,
-                      title: "Private Group",
+                      title: "Private Channel",
                       subtitle:
                           "Private channel can only be join via Invite link...",
-                      value: "Private Group",
+                      value: "Private Channel",
                     ),
 
                     const SizedBox(height: 8),
@@ -203,7 +199,7 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
 
                       const SizedBox(width: 8),
                       Text(
-                        "Group Permission",
+                        "Channel Permission",
                         style: TextStyle(
                           color: AppColors.textColor,
                           fontSize: 18,
@@ -277,7 +273,7 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
                               children: [
                                 InkWell(
                                   onTap: () {
-                                    Get.to(() => const UplaodImageScreen());
+                                    Get.to(() => const ChannelImageUplaod());
                                   },
                                   child: SvgPicture.asset(
                                     'assets/icon/attach_fill.svg',
@@ -388,7 +384,7 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   const Text(
-                                    "Group Type",
+                                    "Channel Type",
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
@@ -451,7 +447,4 @@ class _GroupSettingsScreenState extends State<GroupSettingsScreen> {
       ),
     );
   }
-
-
-
 }

@@ -4,6 +4,7 @@ import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/filter_button.dart';
 import 'package:flutter_extension/views/base/story_thumb.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/channel_screen.dart';
 import 'package:flutter_extension/views/screen/home/allSubScreen/group/group_chat_screen.dart';
 import 'package:flutter_extension/views/screen/home/allSubScreen/personal/personal_chat_screen.dart';
 import 'package:flutter_svg/svg.dart';
@@ -308,7 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           () => const PersonalChatScreen(),
                                         );
                                       } else if (item.type == 'Channel') {
-                                        print("Channel ========> ");
+                                        Get.to(() => const ChannelScreen());
                                       } else if (item.type == 'Group') {
                                         Get.to(() => const GroupChatScreen());
                                       } else {

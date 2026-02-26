@@ -4,16 +4,14 @@ import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/custom_switch.dart';
 import 'package:get/get.dart';
 
-class GroupPermissionScreen extends StatefulWidget {
-  const GroupPermissionScreen({super.key});
+class ChannelPermissonScreen extends StatefulWidget {
+  const ChannelPermissonScreen({super.key});
 
   @override
-  State<GroupPermissionScreen> createState() => _GroupPermissionScreenState();
+  State<ChannelPermissonScreen> createState() => _ChannelPermissonScreenState();
 }
 
-class _GroupPermissionScreenState extends State<GroupPermissionScreen> {
-
-
+class _ChannelPermissonScreenState extends State<ChannelPermissonScreen> {
   List<bool> isSwitch = [false, false, false, false, false];
 
   @override
@@ -318,6 +316,4 @@ class _GroupPermissionScreenState extends State<GroupPermissionScreen> {
       ),
     );
   }
-
-
 }

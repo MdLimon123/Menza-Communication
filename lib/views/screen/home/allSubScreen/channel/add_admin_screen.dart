@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/custom_text_field.dart';
-import 'package:flutter_extension/views/screen/home/allSubScreen/group/administrators/group_permission_screen.dart';
+import 'package:flutter_extension/views/screen/home/allSubScreen/channel/channel_permisson_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class AddGroupScreen extends StatefulWidget {
-  const AddGroupScreen({super.key});
+class AddAdminScreen extends StatefulWidget {
+  const AddAdminScreen({super.key});
 
   @override
-  State<AddGroupScreen> createState() => _AddGroupScreenState();
+  State<AddAdminScreen> createState() => _AddAdminScreenState();
 }
 
-class _AddGroupScreenState extends State<AddGroupScreen> {
-
+class _AddAdminScreenState extends State<AddAdminScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +24,6 @@ class _AddGroupScreenState extends State<AddGroupScreen> {
           SafeArea(
             child: Column(
               children: [
-                
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
@@ -43,7 +41,7 @@ class _AddGroupScreenState extends State<AddGroupScreen> {
 
                       const SizedBox(width: 8),
                       Text(
-                        "Add Group",
+                        "Add Admin",
                         style: TextStyle(
                           color: AppColors.textColor,
                           fontSize: 18,
@@ -113,7 +111,7 @@ class _AddGroupScreenState extends State<AddGroupScreen> {
                             itemBuilder: (context, index) {
                               return InkWell(
                                 onTap: () {
-                                  Get.to(() => const GroupPermissionScreen());
+                                  Get.to(() => const ChannelPermissonScreen());
                                 },
                                 child: Row(
                                   children: [
@@ -182,6 +180,4 @@ class _AddGroupScreenState extends State<AddGroupScreen> {
       ),
     );
   }
-
-
 }

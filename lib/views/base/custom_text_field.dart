@@ -19,7 +19,8 @@ class CustomTextField extends StatefulWidget {
   final FormFieldValidator? validator;
   final bool isPassword;
   final bool? isEmail;
-
+  final double radius;
+  final bool? filled;
   const CustomTextField({
     super.key,
     this.contentPaddingHorizontal,
@@ -36,6 +37,8 @@ class CustomTextField extends StatefulWidget {
     this.filColor,
     this.labelText,
     this.isPassword = false,
+    this.filled,
+    this.radius = 12,
   });
 
   @override
@@ -57,6 +60,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       obscuringCharacter: widget.obscure!,
+
       // validator: widget.validator,
       validator:
           widget.validator ??
@@ -83,26 +87,29 @@ class _CustomTextFieldState extends State<CustomTextField> {
             return null;
           },
       cursorColor: AppColors.primaryColor,
+
       obscureText: widget.isPassword ? obscureText : false,
       style: TextStyle(color: Colors.white, fontSize: 16.sp),
+
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(
           horizontal: widget.contentPaddingHorizontal ?? 20.w,
           vertical: widget.contentPaddingVertical ?? 15.w,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(widget.radius),
           borderSide: const BorderSide(color: Color(0xFF3C3C3C), width: 1),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(widget.radius),
           borderSide: const BorderSide(color: Color(0xFF3C3C3C), width: 1),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(widget.radius),
           borderSide: const BorderSide(color: Color(0xFF3C3C3C), width: 1),
         ),
         fillColor: widget.filColor,
+        filled: widget.filled,
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.isPassword
             ? GestureDetector(

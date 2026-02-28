@@ -3,6 +3,8 @@ import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/custom_switch.dart';
 import 'package:flutter_extension/views/screen/settings/block_screen.dart';
+import 'package:flutter_extension/views/screen/settings/edit_profile_screen.dart';
+import 'package:flutter_extension/views/screen/settings/subscription_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
@@ -310,6 +312,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                         InkWell(
                           onTap: () {
+                            Get.to(() => const EditProfileScreen());
+                          },
+                          child: Row(
+                            children: [
+                              SvgPicture.asset('assets/icon/user.svg'),
+                              const SizedBox(width: 8),
+                              Text(
+                                "Edit Profile",
+                                style: TextStyle(
+                                  color: AppColors.textColor,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(height: 21),
+
+                        InkWell(
+                          onTap: () {
                             Get.to(() => const BlockScreen());
                           },
                           child: Row(
@@ -330,7 +354,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                         const SizedBox(height: 21),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(() => const SubscriptionScreen());
+                          },
                           child: Row(
                             children: [
                               SvgPicture.asset('assets/icon/subscription.svg'),

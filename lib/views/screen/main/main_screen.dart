@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_extension/views/base/bottom_menu.dart';
+import 'package:flutter_extension/views/screen/call/all_call_screen.dart';
 import 'package:flutter_extension/views/screen/discovery/discovery_screen.dart';
 import 'package:flutter_extension/views/screen/home/home_screen.dart';
+import 'package:flutter_extension/views/screen/settings/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -16,8 +18,8 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const DiscoveryScreen(),
-    Container(color: Colors.green),
-    Container(color: Colors.yellow),
+    const AllCallScreen(),
+    const ProfileScreen(),
   ];
 
   @override

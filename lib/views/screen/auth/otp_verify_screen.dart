@@ -5,20 +5,17 @@ import 'package:flutter_extension/util/app_colors.dart';
 import 'package:flutter_extension/util/images.dart';
 import 'package:flutter_extension/views/base/custom_button.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
-import 'package:flutter_extension/views/screen/main/main_screen.dart';
+import 'package:flutter_extension/views/screen/auth/reset_password_screen.dart';
 import 'package:get/get.dart';
 
-
-class EmailOrPhoneVerifyScreen extends StatefulWidget {
-  const EmailOrPhoneVerifyScreen({super.key});
+class OtpVerifyScreen extends StatefulWidget {
+  const OtpVerifyScreen({super.key});
 
   @override
-  State<EmailOrPhoneVerifyScreen> createState() =>
-      _EmailOrPhoneVerifyScreenState();
+  State<OtpVerifyScreen> createState() => _OtpVerifyScreenState();
 }
 
-class _EmailOrPhoneVerifyScreenState extends State<EmailOrPhoneVerifyScreen> {
-  
+class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
   final _authController = Get.put(AuthController());
 
   @override
@@ -127,7 +124,7 @@ class _EmailOrPhoneVerifyScreenState extends State<EmailOrPhoneVerifyScreen> {
                   const SizedBox(height: 100),
                   CustomButton(
                     onTap: () {
-                      Get.to(() => const MainScreen());
+                      Get.to(() => const ResetPasswordScreen());
                     },
                     text: "Verify",
                   ),
@@ -139,7 +136,4 @@ class _EmailOrPhoneVerifyScreenState extends State<EmailOrPhoneVerifyScreen> {
       ),
     );
   }
-
-
-
 }

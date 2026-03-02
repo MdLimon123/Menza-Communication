@@ -132,320 +132,197 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const CustomGridentDesign(),
 
           SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 40),
-                Center(
-                  child: Container(
-                    height: 120,
-                    width: 120,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/call.png'),
-                        fit: BoxFit.cover,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 40),
+                  Center(
+                    child: Container(
+                      height: 120,
+                      width: 120,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/call.png'),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                ),
-
-                const SizedBox(height: 12),
-                Center(
-                  child: Text(
-                    "Brooklyn Simmons",
-                    style: TextStyle(
-                      color: AppColors.textColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                const Center(
-                  child: Text(
-                    "@brooklyn_simmons",
-                    style: TextStyle(
-                      color: Color(0xFFC3C3C3),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 16),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 20,
-                    ),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF000000),
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: AppColors.textColor.withValues(alpha: (0.10)),
-                        width: 1,
+              
+                  const SizedBox(height: 12),
+                  Center(
+                    child: Text(
+                      "Brooklyn Simmons",
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          "Your Info",
-                          style: TextStyle(
-                            color: Color(0xFF616161),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
+                  ),
+                  const SizedBox(height: 4),
+                  const Center(
+                    child: Text(
+                      "@brooklyn_simmons",
+                      style: TextStyle(
+                        color: Color(0xFFC3C3C3),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+              
+                  const SizedBox(height: 16),
+              
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 20,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF000000),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: AppColors.textColor.withValues(alpha: (0.10)),
+                          width: 1,
                         ),
-                        const SizedBox(height: 10),
-
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              'assets/icon/call.svg',
-                              color: AppColors.textColor,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Your Info",
+                            style: TextStyle(
+                              color: Color(0xFF616161),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
                             ),
-                            const SizedBox(width: 8),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "+880 1548 4542",
-                                  style: TextStyle(
-                                    color: AppColors.textColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                Text(
-                                  "Phone number",
-                                  style: TextStyle(
-                                    color: AppColors.textColor.withValues(
-                                      alpha: (0.30),
+                          ),
+                          const SizedBox(height: 10),
+              
+                          Row(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/icon/call.svg',
+                                color: AppColors.textColor,
+                              ),
+                              const SizedBox(width: 8),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "+880 1548 4542",
+                                    style: TextStyle(
+                                      color: AppColors.textColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
                                     ),
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-
-                        const SizedBox(height: 8),
-
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              'assets/icon/at_the_rate.svg',
-                              color: AppColors.textColor,
-                            ),
-                            const SizedBox(width: 8),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "@brooklynsimmons",
-                                  style: TextStyle(
-                                    color: AppColors.textColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                Text(
-                                  "Username",
-                                  style: TextStyle(
-                                    color: AppColors.textColor.withValues(
-                                      alpha: (0.30),
+                                  Text(
+                                    "Phone number",
+                                    style: TextStyle(
+                                      color: AppColors.textColor.withValues(
+                                        alpha: (0.30),
+                                      ),
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w400,
                                     ),
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-
-                        const SizedBox(height: 8),
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              'assets/icon/email.svg',
-                              color: AppColors.textColor,
-                            ),
-                            const SizedBox(width: 8),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "@brooklynsimmons",
-                                  style: TextStyle(
-                                    color: AppColors.textColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                Text(
-                                  "E-mail address",
-                                  style: TextStyle(
-                                    color: AppColors.textColor.withValues(
-                                      alpha: (0.30),
+                                ],
+                              ),
+                            ],
+                          ),
+              
+                          const SizedBox(height: 8),
+              
+                          Row(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/icon/at_the_rate.svg',
+                                color: AppColors.textColor,
+                              ),
+                              const SizedBox(width: 8),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "@brooklynsimmons",
+                                    style: TextStyle(
+                                      color: AppColors.textColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
                                     ),
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-
-                        const SizedBox(height: 41),
-
-                        InkWell(
-                          onTap: () {
-                            Get.to(() => const EditProfileScreen());
-                          },
-                          child: Row(
-                            children: [
-                              SvgPicture.asset('assets/icon/user.svg'),
-                              const SizedBox(width: 8),
-                              Text(
-                                "Edit Profile",
-                                style: TextStyle(
-                                  color: AppColors.textColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                                  Text(
+                                    "Username",
+                                    style: TextStyle(
+                                      color: AppColors.textColor.withValues(
+                                        alpha: (0.30),
+                                      ),
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ),
-
-                        const SizedBox(height: 21),
-
-                        InkWell(
-                          onTap: () {
-                            Get.to(() => const BlockScreen());
-                          },
-                          child: Row(
+              
+                          const SizedBox(height: 8),
+                          Row(
                             children: [
-                              SvgPicture.asset('assets/icon/user.svg'),
+                              SvgPicture.asset(
+                                'assets/icon/email.svg',
+                                color: AppColors.textColor,
+                              ),
                               const SizedBox(width: 8),
-                              Text(
-                                "Blocked Users",
-                                style: TextStyle(
-                                  color: AppColors.textColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "@brooklynsimmons",
+                                    style: TextStyle(
+                                      color: AppColors.textColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Text(
+                                    "E-mail address",
+                                    style: TextStyle(
+                                      color: AppColors.textColor.withValues(
+                                        alpha: (0.30),
+                                      ),
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ),
-
-                        const SizedBox(height: 21),
-                        InkWell(
-                          onTap: () {
-                            Get.to(() => const SubscriptionScreen());
-                          },
-                          child: Row(
-                            children: [
-                              SvgPicture.asset('assets/icon/subscription.svg'),
-                              const SizedBox(width: 8),
-                              Text(
-                                "Subscription",
-                                style: TextStyle(
-                                  color: AppColors.textColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 21),
-                        InkWell(
-                          onTap: () {},
-                          child: Row(
-                            children: [
-                              SvgPicture.asset('assets/icon/notification.svg'),
-                              const SizedBox(width: 8),
-                              Text(
-                                "Notifications",
-                                style: TextStyle(
-                                  color: AppColors.textColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              const Spacer(),
-                              CustomSwitch(
-                                value: switchValue,
-                                onChanged: (value) {
-                                  setState(() {
-                                    switchValue = value;
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 21),
-                        InkWell(
-                          onTap: () {},
-                          child: Row(
-                            children: [
-                              SvgPicture.asset('assets/icon/language.svg'),
-                              const SizedBox(width: 8),
-                              Text(
-                                "Language",
-                                style: TextStyle(
-                                  color: AppColors.textColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(height: 40),
-                        InkWell(
-                          onTap: () {
-                            _showLogoutBottomSheet(context);
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 12,
-                            ),
-                            decoration: BoxDecoration(
-                              color: const Color(
-                                0xFFFF0000,
-                              ).withValues(alpha: (0.10)),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
+              
+                          const SizedBox(height: 41),
+              
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => const EditProfileScreen());
+                            },
                             child: Row(
                               children: [
-                                SvgPicture.asset(
-                                  'assets/icon/logout.svg',
-                                  color: const Color(0xFFFF0000),
-                                ),
+                                SvgPicture.asset('assets/icon/user.svg'),
                                 const SizedBox(width: 8),
-                                const Text(
-                                  "Logout",
+                                Text(
+                                  "Edit Profile",
                                   style: TextStyle(
-                                    color: Color(0xFFFF0000),
+                                    color: AppColors.textColor,
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -453,12 +330,137 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ],
                             ),
                           ),
-                        ),
-                      ],
+              
+                          const SizedBox(height: 21),
+              
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => const BlockScreen());
+                            },
+                            child: Row(
+                              children: [
+                                SvgPicture.asset('assets/icon/user.svg'),
+                                const SizedBox(width: 8),
+                                Text(
+                                  "Blocked Users",
+                                  style: TextStyle(
+                                    color: AppColors.textColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+              
+                          const SizedBox(height: 21),
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => const SubscriptionScreen());
+                            },
+                            child: Row(
+                              children: [
+                                SvgPicture.asset('assets/icon/subscription.svg'),
+                                const SizedBox(width: 8),
+                                Text(
+                                  "Subscription",
+                                  style: TextStyle(
+                                    color: AppColors.textColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 21),
+                          InkWell(
+                            onTap: () {},
+                            child: Row(
+                              children: [
+                                SvgPicture.asset('assets/icon/notification.svg'),
+                                const SizedBox(width: 8),
+                                Text(
+                                  "Notifications",
+                                  style: TextStyle(
+                                    color: AppColors.textColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                const Spacer(),
+                                CustomSwitch(
+                                  value: switchValue,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      switchValue = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 21),
+                          InkWell(
+                            onTap: () {},
+                            child: Row(
+                              children: [
+                                SvgPicture.asset('assets/icon/language.svg'),
+                                const SizedBox(width: 8),
+                                Text(
+                                  "Language",
+                                  style: TextStyle(
+                                    color: AppColors.textColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+              
+                          const SizedBox(height: 40),
+                          InkWell(
+                            onTap: () {
+                              _showLogoutBottomSheet(context);
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 12,
+                              ),
+                              decoration: BoxDecoration(
+                                color: const Color(
+                                  0xFFFF0000,
+                                ).withValues(alpha: (0.10)),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    'assets/icon/logout.svg',
+                                    color: const Color(0xFFFF0000),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  const Text(
+                                    "Logout",
+                                    style: TextStyle(
+                                      color: Color(0xFFFF0000),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

@@ -7,6 +7,7 @@ import 'package:flutter_extension/views/base/custom_button.dart';
 import 'package:flutter_extension/views/base/custom_grident_design.dart';
 import 'package:flutter_extension/views/base/custom_selection_button.dart';
 import 'package:flutter_extension/views/base/custom_text_field.dart';
+import 'package:flutter_extension/views/screen/auth/forget_password_screen.dart';
 import 'package:flutter_extension/views/screen/main/main_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -109,7 +110,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       const Spacer(),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => const ForgetPasswordScreen());
+                        },
                         child: Text(
                           "Forget password?",
                           style: TextStyle(

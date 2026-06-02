@@ -127,14 +127,14 @@ class _AudioCallScreenState extends State<AudioCallScreen> {
                       icon: 'assets/icon/volume.svg',
                       onTap: () {},
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: 8),
                     GestureDetector(
                       onTap: () {
                         Get.back();
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 28,
+                          horizontal: 20,
                           vertical: 20,
                         ),
                         decoration: BoxDecoration(
@@ -145,7 +145,7 @@ class _AudioCallScreenState extends State<AudioCallScreen> {
                           "Call End",
                           style: TextStyle(
                             color: AppColors.textColor,
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
                         ),

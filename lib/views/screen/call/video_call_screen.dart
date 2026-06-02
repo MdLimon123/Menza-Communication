@@ -139,7 +139,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                       onTap: () {},
                     ),
 
-                    const SizedBox(width: 10),
+                    const SizedBox(width: 8),
 
                     GestureDetector(
                       onTap: () {
@@ -147,7 +147,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 28,
+                          horizontal: 20,
                           vertical: 20,
                         ),
                         decoration: BoxDecoration(
@@ -158,7 +158,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                           "Call End",
                           style: TextStyle(
                             color: AppColors.textColor,
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
